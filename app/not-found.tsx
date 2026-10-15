@@ -1,0 +1,1 @@
+import Link from "next/link";export default function NotFound(){return <main className="not-found"><span>404 · SIGNAL NOT FOUND</span><h1>This data point is missing.</h1><p>The page may have moved, but the rest of the analysis is still intact.</p><Link className="button" href="/">Return to overview</Link></main>}
