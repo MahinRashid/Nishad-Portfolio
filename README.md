@@ -1,5 +1,7 @@
 # Nishad Rashid Mahi: Business Data Analyst Portfolio
 
+**Live site: [www.nishadportfolio.com](https://www.nishadportfolio.com)**
+
 An interactive portfolio site for my data analysis work. Each case study links to its dashboard and its GitHub repository, so every number on the site can be checked against the analysis behind it.
 
 **Built with:** Next.js, TypeScript, React, CSS and SVG charts · deployed on Vercel
