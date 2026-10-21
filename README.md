@@ -14,6 +14,7 @@ An interactive portfolio site for my data analysis work. Each case study links t
   - [Maternal Health Risk Screening](https://github.com/MahinRashid/Maternity-Health-Risk) (Python · scikit-learn · Tableau)
 - **Dashboard galleries** with screenshots of each Tableau and Power BI dashboard
 - **My visual résumé** ([source](https://github.com/MahinRashid/Viz-Resume))
+- **My résumé as a PDF**, downloadable from the site
 - **How I work:** understand the decision, make the evidence clear, recommend the next move
 - **Contact form**
 

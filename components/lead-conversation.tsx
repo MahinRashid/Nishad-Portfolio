@@ -106,7 +106,7 @@ export function LeadConversation() {
     let reply: ChatMessage;
     if (choice === "View my projects") reply = { from: "nishad", text: "You can explore five verified projects covering political funding, e-commerce, Amazon.in operations, Walmart performance and responsible maternal-health risk modelling.", href: "/projects", label: "View projects" };
     else if (choice === "Experience") reply = { from: "nishad", text: "I focus on business questions, reliable analysis, useful dashboards and clear decision support. My approach combines technical analysis with stakeholder communication and disciplined project delivery.", href: "#about", label: "Read about me" };
-    else if (choice === "Download résumé") reply = { from: "nishad", text: "The downloadable file is currently a résumé placeholder and will be replaced with my final PDF.", href: "/resume-placeholder.txt", label: "Download résumé" };
+    else if (choice === "Download résumé") reply = { from: "nishad", text: "Here is my résumé as a PDF, with my experience, skills and five portfolio projects.", href: "/Nishad_Rashid_Mahi_Resume.pdf", label: "Download résumé (PDF)" };
     else if (choice === "Other") {
       reply = { from: "nishad", text: "Of course — write your question below and I’ll include it in your message to me." };
       setComposer(true); setTimeout(() => inputRef.current?.focus(), 50);
@@ -146,7 +146,9 @@ export function LeadConversation() {
       <div className="chat-panel real-chat-panel" role="dialog" aria-modal="true" aria-label="Let’s talk" ref={panelRef}>
         <header><div><span className="chat-avatar">N</span><div><b>Let’s talk</b><small><i/> Replies and contact requests</small></div></div><button onClick={() => setOpen(false)} aria-label="Close chat"><X/></button></header>
         <div className="messages" aria-live="polite">
-          {messages.map((message, index) => <div key={`${message.text}-${index}`} className={`message ${message.from === "visitor" ? "user" : "bot"}`}><p>{message.text}</p>{message.href && <Link href={message.href} onClick={() => message.href?.startsWith("#") && setOpen(false)}>{message.label}<ChevronRight size={15}/></Link>}</div>)}
+          {messages.map((message, index) => <div key={`${message.text}-${index}`} className={`message ${message.from === "visitor" ? "user" : "bot"}`}><p>{message.text}</p>{message.href && (message.href.endsWith(".pdf")
+            ? <a href={message.href} target="_blank" rel="noreferrer">{message.label}<ChevronRight size={15}/></a>
+            : <Link href={message.href} onClick={() => message.href?.startsWith("#") && setOpen(false)}>{message.label}<ChevronRight size={15}/></Link>)}</div>)}
           {!result && <div className="chat-options" aria-label="Conversation options">
             <button onClick={() => choose("View my projects")}><ArrowRight/>View my projects</button>
             <button onClick={() => choose("Experience")}><Sparkles/>Experience</button>
