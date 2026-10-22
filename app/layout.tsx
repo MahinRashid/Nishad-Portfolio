@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { siteUrl } from "@/lib/site-url";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl), title: { default: "Nishad Rashid Mahi | Business Data Analyst", template: "%s | Nishad Rashid Mahi" },
@@ -13,5 +14,5 @@ export const metadata: Metadata = {
 };
 const personSchema = { "@context": "https://schema.org", "@type": "Person", name: "Nishad Rashid Mahi", jobTitle: "Business Data Analyst", url: siteUrl, knowsAbout: ["Business analysis", "Data visualization", "SQL", "Python", "Tableau", "Power BI", "Excel"] };
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body><a className="skip-link" href="#main">Skip to content</a><ScrollReveal/>{children}<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} /></body></html>;
+  return <html lang="en"><body><a className="skip-link" href="#main">Skip to content</a><ScrollReveal/>{children}<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} /><Analytics/></body></html>;
 }
